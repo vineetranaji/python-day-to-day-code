@@ -23,6 +23,8 @@ jobs:
     - name: Run Python scripts
       run: |
         for file in $(find . -type f -name '*.py'); do
-          echo "Running $file"
-          python "$file" || { echo "$file failed"; exit 1; }
+          if [ -f "$file" ]; then
+            echo "Running $file"
+            python "$file" || { echo "$file failed"; exit 1; }
+          fi
         done
