@@ -1,6 +1,10 @@
 name: Python application
 
-on: [push]
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'  # Runs every day at 00:00 UTC
 
 jobs:
   lint:
