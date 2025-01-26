@@ -149,6 +149,7 @@ jobs:
           echo "Running $script" >> $log_file
           python "$script" >> $log_file 2>&1 || exit 1
         done
+        cat $log_file  # Debugging step to print the log file content
 
     - name: Commit and push logs
       env:
@@ -157,5 +158,5 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add logs/
-        git commit -m 'Add logs from GitHub Actions workflow'
+        git commit -m 'Add logs'
         git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/vineetranaji/python-day-to-day-code.git
