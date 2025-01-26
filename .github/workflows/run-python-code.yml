@@ -1,12 +1,9 @@
 name: Run Python Code
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  schedule:
+    - cron: '0 11 * * 1,4'  # Runs at 11:00 AM UTC on Mondays and Thursdays
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   run-code:
