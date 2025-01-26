@@ -47,3 +47,16 @@ def merge_alternately(word1, word2):
     if j < len(word2):
         merged.append(word2[j:])
     return ''.join(merged)
+
+# Example usage
+word1 = "abc"
+word2 = "pqr"
+print(merge_alternately(word1, word2))  # Output: "apbqcr"
+
+word1 = "ab"
+word2 = "pqrs"
+print(merge_alternately(word1, word2))  # Output: "apbqrs"
+
+word1 = "abcd"
+word2 = "pq"
+print(merge_alternately(word1, word2))  # Output: "apbqcd"
