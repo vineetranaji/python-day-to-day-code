@@ -5,3 +5,7 @@ scipy
 requests
 flask
 pytest
+beautifulsoup4
+scikit-learn
+seaborn
+jupyter
