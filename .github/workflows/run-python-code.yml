@@ -140,14 +140,10 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-
     - name: Run Python scripts
       run: |
         mkdir -p logs
+        echo "$(date '+%d %b %Y at %H:%M')" >> logs/output.log
         for script in tasks/*.py; do
           echo "Running $script" >> logs/output.log
           python "$script" >> logs/output.log 2>&1 || exit 1
