@@ -26,3 +26,15 @@ The `lcm.py` file contains functions to calculate the greatest common divisor (G
 ### LCM Using Math Module
 
 The `lcm using math module.py` file contains a function to calculate the LCM of two numbers using Python's built-in `math` module.
+
+### Merge Alternately
+
+The `merge alternately.py` file contains a function to merge two strings by adding letters in alternating order. If one string is longer than the other, the additional letters are appended to the end of the merged string.
+
+```python
+from tasks.merge_alternately import merge_alternately
+
+# Example usage
+merged_string = merge_alternately("abc", "pqr")
+print(merged_string)  # Output: "apbqcr"
+```
