@@ -143,10 +143,11 @@ jobs:
     - name: Run Python scripts
       run: |
         mkdir -p logs
-        echo "$(date '+%d %b %Y at %H:%M')" >> logs/output.log
+        log_file="logs/output_$(date '+%Y-%m-%d_%H-%M-%S').log"
+        echo "$(date '+%d %b %Y at %H:%M')" >> $log_file
         for script in tasks/*.py; do
-          echo "Running $script" >> logs/output.log
-          python "$script" >> logs/output.log 2>&1 || exit 1
+          echo "Running $script" >> $log_file
+          python "$script" >> $log_file 2>&1 || exit 1
         done
 
     - name: Commit and push logs
@@ -155,6 +156,6 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add -f logs/output.log
+        git add logs/
         git commit -m 'Add logs from GitHub Actions workflow'
         git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/vineetranaji/python-day-to-day-code.git
