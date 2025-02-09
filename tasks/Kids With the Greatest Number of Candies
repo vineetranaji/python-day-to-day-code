@@ -1,0 +1,13 @@
+def kidsWithCandies(candies, extraCandies):
+    # Step 1: Find the maximum candies any kid has
+    maxCandies = max(candies)
+    
+    # Step 2: Iterate over each kid and check if they will have the greatest number of candies
+    result = []
+    for candy in candies:
+        if candy + extraCandies >= maxCandies:
+            result.append(True)
+        else:
+            result.append(False)
+    
+    return result
