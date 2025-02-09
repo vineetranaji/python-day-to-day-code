@@ -1,1 +1,3 @@
+===============================Output============================
+
 Output of all the scripts present in python-day-to-day-code/tasks/*.py are executed and uploaded at https://github.com/vineetranaji/github-workflows/blob/master/logs/output.log using this repo's workflow https://github.com/vineetranaji/github-workflows.git
